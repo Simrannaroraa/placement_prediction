@@ -1,13 +1,10 @@
-# Placement Prediction using Machine Learning
+# Placement Prediction Using Machine Learning
 
-This project focuses on predicting student placement and salary in campus recruitment using Random Forest classifiers. The goal is to help students and educational institutions understand the factors that influence placement success and expected salary.
+This project leverages machine learning to predict student placement outcomes and expected salaries during campus recruitment. By analyzing various student features, the project aims to assist students and educational institutions in improving placement strategies and preparing for recruitment processes.
 
-## Final Result
-<img src="static/images/pl1.png" alt="Alt text" width=100%>
-<img src="static/images/pl2.png" alt="Alt text" width=100%>
-<img src="static/images/pl3.png" alt="Alt text" width=100%>
+---
 
-## Table of Contents
+## 📋 Table of Contents
 - [Overview](#overview)
 - [Dataset](#dataset)
 - [Installation](#installation)
@@ -16,108 +13,131 @@ This project focuses on predicting student placement and salary in campus recrui
 - [Model Training](#model-training)
 - [Evaluation](#evaluation)
 - [Results](#results)
+- [Streamlit App](#streamlit-app)
 - [Contributing](#contributing)
 - [License](#license)
 
-## Overview
+---
 
-Campus placement is a crucial event for students and educational institutions. Predicting placement outcomes and potential salaries can help students prepare better and institutions improve their placement strategies. This project uses Random Forest classifiers to predict both placement probability and expected salary based on various student features.
+## 🌟 Overview
+Campus placement is a critical milestone for students and educational institutions. This project uses Random Forest classifiers to predict:
+1. **Placement Probability**: Whether a student is likely to be placed.
+2. **Expected Salary**: The potential salary for placed students.
 
-## Dataset
+By analyzing academic performance, skills, and other relevant features, the project provides actionable insights to improve placement outcomes.
 
-The dataset used in this project includes student information such as:
-- Academic performance (CGPA)
-- Skills
-- Weather the Candidate has done Intership
-- Weather the Candidate has Participated in hackathons
-- Other relevant features
+---
 
-The dataset contains features for predicting both placement status and salary.
+## 📊 Dataset
+The dataset includes the following features:
+- **Academic Performance**: CGPA, percentage scores, etc.
+- **Skills**: Number and type of skills.
+- **Extracurricular Activities**: Participation in internships, hackathons, workshops, etc.
+- **Other Features**: Backlogs, mini-projects, communication skills, etc.
 
-## Installation
+These features are used to train models for predicting placement status and salary.
 
-To run this project locally, follow these steps:
+---
 
-1. Clone the repository:
-   git clone https://github.com/charans2702/Placement_Prediction_Using_Machine-Learning.git
-   
-2. Install the required packages:
+## ⚙️ Installation
+Follow these steps to set up and run the project locally:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Simrannaroraa/placement_prediction.git
+   ```
+
+2. **Install Dependencies**:
+   ```bash
    pip install -r requirements.txt
+   ```
 
-## Project Structure
+3. **Run the Streamlit App**:
+   ```bash
+   streamlit run app.py
+   ```
 
-- `static/`: Contains images and css files
-- `templates/`: Contains HTML files
-- `app.py`: Main Flask App
-- `model.pkl`: Pickle file of predicting placement model
-- `model1.pkl`: Pickle file of Salary Prediction model
-- `Placement_prediction_data.csv`: Placement Prediction data
-- `Placement_prediction.py`: Model for Placement Prediction
-- `preprocessing.ipynb`: Jupyter Notebook for Data preprocessing
-- `requirements.txt`: List of required Python packages
-- `salary_prediction_data.csv`: Salary prediction data
-- `salary_prediction.py`: Model for salary prediction
-- `README.md`: Project documentation
+---
 
-## Data Preprocessing
+## 🗂️ Project Structure
+- `app.py`: Main Streamlit application.
+- `model.pkl`: Placement prediction model.
+- `model1.pkl`: Salary prediction model.
+- `Placement_prediction_data.csv`: Dataset for placement prediction.
+- `Salary_prediction_data.csv`: Dataset for salary prediction.
+- `Placement_prediction.py`: Script for training the placement prediction model.
+- `Salary_prediction.py`: Script for training the salary prediction model.
+- `preprocessing.ipynb`: Jupyter Notebook for data preprocessing.
+- `requirements.txt`: List of required Python packages.
+- `README.md`: Project documentation.
 
-The data preprocessing steps include:
-1. Handling missing values
-2. Encoding categorical variables
-3. Feature scaling
-4. Feature selection
+---
 
-## Model Training
+## 🛠️ Data Preprocessing
+The preprocessing pipeline includes:
+1. Handling missing values.
+2. Encoding categorical variables.
+3. Scaling numerical features.
+4. Selecting relevant features for training.
 
-Two Random Forest classifiers are trained:
-1. Placement Prediction Model: Predicts whether a student will be placed
-2. Salary Prediction Model: Predicts the salary for placed students
+---
 
-The training process involves:
-1. Splitting the data into training and testing sets
-2. Initializing the Random Forest classifiers
-3. Training the models on the training set
-4. Fine-tuning hyperparameters using techniques like Grid Search or Random Search
+## 🤖 Model Training
+Two Random Forest classifiers were trained:
+1. **Placement Prediction Model**: Predicts whether a student will be placed.
+2. **Salary Prediction Model**: Predicts the expected salary for placed students.
 
-## Evaluation
+### Training Steps:
+- Splitting the dataset into training and testing sets.
+- Initializing and training the Random Forest classifiers.
+- Fine-tuning hyperparameters using Grid Search or Random Search.
 
-The models' performance is evaluated using various metrics, including:
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- Confusion Matrix
-- Roc_Auc_Score
+---
 
-## Results
+## 📈 Evaluation
+The models were evaluated using the following metrics:
+- **Accuracy**
+- **Precision**
+- **Recall**
+- **F1 Score**
+- **ROC AUC Score**
 
-### Placement Prediction Model
-- Accuracy: 88.7%
-- Precision: 0.93
-- Recall: 0.86
-- F1 Score: 0.90
-- Roc_Auc_Score:0.94
+---
 
-**CONFUSION MATRIX**:
+## 🏆 Results
+### Placement Prediction Model:
+- **Accuracy**: 88.7%
+- **Precision**: 0.93
+- **Recall**: 0.86
+- **F1 Score**: 0.90
+- **ROC AUC Score**: 0.94
 
-<img src="static/images/confusion_matrix.png " alt="Alt text" width="400" height="400">
+---
 
-**ROC CURVE**:
+## 🚀 Streamlit App
+The trained models are deployed using a Streamlit application. The app provides an interactive interface for users to:
+1. Input student details.
+2. Predict placement probability.
+3. Estimate expected salary.
 
-<img src="static/images/roc_curve.png " alt="Alt text" width="500" height="400">
+### Run the App:
+```bash
+streamlit run app.py
+```
 
-**FEATURE IMPORTANCE**:
+---
 
-<img src="static/images/feature_importance.png " alt="Alt text">
+## 🤝 Contributing
+Contributions are welcome! To contribute:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Submit a pull request with a detailed description of your changes.
 
-## Flask App
+---
 
-The trained models are deployed using a Flask web application. The app allows users to input student details and receive predictions for placement probability and expected salary.
+## 📜 License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-## Contributing
+---
 
-Contributions are welcome! Please feel free to submit a Pull Request or open an Issue.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+Feel free to reach out with any questions or suggestions!
